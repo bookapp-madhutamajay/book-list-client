@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Book APP!!</title>
-</head>
-<body>
-    <h1>Book App!!</h1>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Book APP!!</title>
+		<script id="book-template" type="text/x-handlebars-template">
+				<article class="book-template" data-author="{{author}}" data-title="{{title}}">
+					<header>
+						<h2>{{title}}</h2>
+						<div class="byline">
+							By <address>{{author}}</address>
+						</div>
+					</header>		
+					<section class="book-body">{{{description}}}</section>
+				</article>
+		</script>
+	</head>
+
+	<body>
+		<header class="site-header clearfix">
+			<section class="heading-group-h1">
+				<h1>Book App!!</h1>
+				<h2>The wondrous world of books!</h2>
+			</section>
+			<nav class="main-nav">
+				<div class="icon-menu"></div>
+				<ul>
+					<li class="tab" data-content="books">
+						<a href="#" class="icon-home">Home</a>
+					</li>
+					<li class="tab" data-content="about">
+							<a href="#" class="icon-address-book">About</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+			<section id="books" class="tab-content">
+				<div>
+					<ul id="filters">
+						<li>	
+							<select id="author-filter">
+								<option values="">Filter by Authors</option>
+							</select>
+						</li>
+						<li>	
+							<select id="title-filter">
+								<option values="">Filter by Titles</option>
+							</select>
+						</li>		
+					</ul>
+				</div>
+			</section>
+			<section id="about" class="tab-content">
+				<header>
+					Welcome to Book App!
+				</header>
+			</section>
+			<section>
+				<h1>We love all kinds of books:</h1>
+				<ul>
+					<li>Romance</li>
+					<li>Science Fiction</li>
+					<li>Historical Drama</li>
+				</ul>
+			</section>
+		</main>
+
+		<footer>
+				&copy; 2018 Code Fellows | Book App | Happy Reading!
+		</footer>
+	</body>
 </html>
