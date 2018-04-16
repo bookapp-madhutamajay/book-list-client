@@ -12,3 +12,9 @@ var app = app || {};
   module.bookView = bookView;
 
 })(app);
+
+//Shorthand for $(document).ready()
+$(function() {
+  console.log('DOM loaded');
+  app.Book.fetchAll(app.bookView.initIndexPage);
+});
