@@ -11,16 +11,17 @@
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
 		<title>Book APP!!</title>
+		<script type="text/x-handlebars-template" id="error-template">
+			<p>{{status}}: {{statusText}}</p>
+		  </script>
 		<script id="book-list-template" type="text/x-handlebars-template">
-				<article class="book-template" data-author="{{author}}" data-title="{{title}}">
-					<header>
-						<h2>{{title}}</h2>
-						<div class="byline">
-							By <address>{{author}}</address>
-						</div>
-					</header>		
-					<section class="book-body">{{{description}}}</section>
-				</article>
+				<li class = "book-item">
+				  <h4>Book: {{title}}</h4>	
+				  <p>Description: {{description}}</p>
+				  <p>Author: {{author}}</p>
+				  <p>ISBN: {{isbn}}</p>
+				  <p>{{image_url}}</p>
+				</li>
 		</script>
 	</head>
 
@@ -44,21 +45,13 @@
 		</header>
 
 		<main>
-			<section id="books" class="tab-content">
-				<div>
-					<ul id="filters">
-						<li>	
-							<select id="author-filter">
-								<option values="">Filter by Authors</option>
-							</select>
-						</li>
-						<li>	
-							<select id="title-filter">
-								<option values="">Filter by Titles</option>
-							</select>
-						</li>		
-					</ul>
-				</div>
+			<section class="error-view container">
+				<h3>Something went wrong</h3>
+				<section id="error-message"></section>
+			</section>
+			<section class="book-view container">
+				<h3>List of Books</h3>
+				<ul id="book-list"></ul>
 			</section>
 			<section id="about" class="tab-content">
 				<header>
@@ -83,6 +76,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
     <script src="scripts/models/book.js"></script>
 		<script src="scripts/views/book-view.js"></script>
-		<script src="scripts/views/error-view.js"></script>
+        <script src="scripts/views/error-view.js"></script>
+        <script>
+          $(document).ready(()=>{
+  app.Book.fetchAll(app.bookView.initIndexPage);
+});
+        </script>
 	</body>
 </html>
