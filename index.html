@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
-		<title>Book APP!!</title>
+		<title>Books app</title>
 		<script type="text/x-handlebars-template" id="error-template">
 			<p>{{status}}: {{statusText}}</p>
 		  </script>
@@ -29,20 +29,8 @@
 	<body>
 		<header class="site-header clearfix">
 			<section class="heading-group-h1">
-				<h1>Book App!!</h1>
-				<h1>The wondrous world of books!</h1>
+				<h1 class="icon-home"> Books app</h1>
 			</section>
-			<nav class="main-nav">
-				<div class="icon-menu"></div>
-				<ul>
-					<li class="tab" data-content="books">
-						<a href="#" class="icon-home">Home</a>
-					</li>
-					<li class="tab" data-content="about">
-							<a href="#" class="icon-address-book">About</a>
-					</li>
-				</ul>
-			</nav>
 		</header>
 
 		<main>
@@ -51,9 +39,8 @@
 				<section id="error-message"></section>
 			</section>
 			<section class="book-view container">
-				<h2>List of Books</h2>
-				<p>-----------------------------------</p>
-				<ul id="book-list"></ul>
+				<h2>my books</h2>
+				<div id= "book-item"><ul id="book-list"></ul></div>
 			</section>
 			<section id="about" class="tab-content">
 				<header>
