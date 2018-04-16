@@ -5,7 +5,7 @@ var app = app || {}; // Change to var if it's BROKEN!
 const ENV = {};
 
 ENV.isProduction = window.location.protocol === 'https';
-ENV.productionApiUrl = 'https://bookapp-madhutamajay.github.io/book-list-client';
+ENV.productionApiUrl = 'https://git.heroku.com/mr-tr-js-booklist.git';
 ENV.developmentApiUrl = 'http://localhost:5000';
 ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl :ENV.developmentApiUrl;
 
