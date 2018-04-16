@@ -4,7 +4,7 @@ var app = app || {}; // Change to var if it's BROKEN!
 
 const ENV = {};
 
-ENV.isProduction = window.location.protocol === 'https';
+ENV.isProduction = window.location.protocol === 'https:';
 ENV.productionApiUrl = 'https://git.heroku.com/mr-tr-js-booklist.git';
 ENV.developmentApiUrl = 'http://localhost:5000';
 ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl :ENV.developmentApiUrl;
@@ -39,7 +39,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl :ENV.developmentApiUrl;
   };
 
   Book.fetchAll = callback => {
-    console.log(window.location.protocol, ENV.isProduction,ENV.apiUrl);
+    // console.log(window.location.protocol, ENV.isProduction,ENV.apiUrl);
     $.get(`${ENV.apiUrl}/api/v1/books`)
       .then(results => {
         console.log(results);
