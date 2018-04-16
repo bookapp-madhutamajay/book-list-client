@@ -16,11 +16,12 @@
 		  </script>
 		<script id="book-list-template" type="text/x-handlebars-template">
 				<li class = "book-item">
-				  <h4>Book: {{title}}</h4>	
-				  <p>Description: {{description}}</p>
-				  <p>Author: {{author}}</p>
-				  <p>ISBN: {{isbn}}</p>
-				  <p>{{image_url}}</p>
+				  <h3><b>Book: </b><b>{{title}}</b></h3>	
+				  <img src="{{image_url}}">
+				  <p><b>Description:</b> {{description}}</p>
+				  <p><b>Author:</b> {{author}}</p>
+				  <p><b>ISBN:</b> {{isbn}}</p>
+				  <hr>
 				</li>
 		</script>
 	</head>
@@ -29,7 +30,7 @@
 		<header class="site-header clearfix">
 			<section class="heading-group-h1">
 				<h1>Book App!!</h1>
-				<h2>The wondrous world of books!</h2>
+				<h1>The wondrous world of books!</h1>
 			</section>
 			<nav class="main-nav">
 				<div class="icon-menu"></div>
@@ -46,11 +47,12 @@
 
 		<main>
 			<section class="error-view container">
-				<h3>Something went wrong</h3>
+				<h2>Something went wrong</h2>
 				<section id="error-message"></section>
 			</section>
 			<section class="book-view container">
-				<h3>List of Books</h3>
+				<h2>List of Books</h2>
+				<p>-----------------------------------</p>
 				<ul id="book-list"></ul>
 			</section>
 			<section id="about" class="tab-content">

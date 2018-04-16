@@ -10,8 +10,22 @@ body {
 
 main {
   margin: 0 20px;
+  font-size: 1.1em;
 }
-
+h2{
+  font-size: 1.8em;
+  font-weight: bold;
+}
+h3{
+  font-size: 1.2em;
+  font-weight: bold;
+}
+p{
+  text-align: justify;
+}
+b { 
+  font-weight: bold;
+}
 hr {
   margin: 1em;
   width: 80%;
