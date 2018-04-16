@@ -6,7 +6,7 @@ const ENV = {};
 
 ENV.isProduction = window.location.protocol === 'https';
 ENV.productionApiUrl = 'https://bookapp-madhutamajay.github.io/book-list-client';
-ENV.developmentApiUrl = 'http://127.0.0.1:5000';
+ENV.developmentApiUrl = 'http://localhost:5000';
 ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl :ENV.developmentApiUrl;
 
 
@@ -33,13 +33,15 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl :ENV.developmentApiUrl;
   }
   
   Book.loadAll = rows => {
-    rows.sort((a,b) => a.title.localCompare(b.title));
+    //rows.sort((a,b) => a.title.localCompare(b.title));
+    rows.sort((a,b) => b.title - a.title);
     Book.all = rows.map(bookObject => new Book(bookObject));
   };
 
   Book.fetchAll = callback => {
     $.get(`${ENV.apiUrl}/api/v1/books`)
       .then(results => {
+        console.log(results);
         Book.loadAll(results);
       })
       .then(callback)
