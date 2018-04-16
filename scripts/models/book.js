@@ -39,6 +39,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl :ENV.developmentApiUrl;
   };
 
   Book.fetchAll = callback => {
+    console.log(window.location.protocol, ENV.isProduction,ENV.apiUrl);
     $.get(`${ENV.apiUrl}/api/v1/books`)
       .then(results => {
         console.log(results);
