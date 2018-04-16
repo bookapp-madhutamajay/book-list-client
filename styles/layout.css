@@ -11,33 +11,13 @@
   display: table;
   clear: both;
 }
-
-.heading-group-h1 {
-  font-size: 1.5em;
+.book-item{
+   padding: 1em;
+   background-color: rgb(106, 101, 101);
 }
-
-#filters select {
-  width: 90%;
-  margin: .2em 5%;
-}
-
 @media only screen and (min-width: 640px) {
   .heading-group-h1 {
     padding: .1em .1em .1em 2em;
     float: none;
-  }
-
-  #filters select {
-    width: 15em;
-    margin: .2em .2em;
-  }
-
-  #filters li {
-    width: 20em;
-    display: inline;
-  }
-  .book-list {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
   }
 }
